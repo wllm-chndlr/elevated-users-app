@@ -26,7 +26,7 @@ const NotFoundPage = () => {
         404 - User Not Found
       </h1>
       <p className="text-gray-600 mb-8">
-        Sorry, we couldn't find the user profile you were looking for.
+        Sorry, we couldn&apos;t find the user profile you were looking for.
       </p>
       <Link
         href="/users"

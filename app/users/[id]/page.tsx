@@ -3,15 +3,15 @@ import UserProfileCard from "@/components/UserProfileCard";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-interface UserProfilePageProps {
-  params: {
-    id: string;
-  };
-}
-
 const UserProfilePage = async ({
-  params: { id: userIdString },
-}: UserProfilePageProps) => {
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  // First, await the promise to get the resolved params object
+  const resolvedParams = await params;
+  // Then, access the id property from the resolved object
+  const userIdString = resolvedParams.id;
   const userId = parseInt(userIdString, 10);
 
   if (isNaN(userId) || userId <= 0) {
@@ -48,7 +48,13 @@ const UserProfilePage = async ({
       </div>
     );
   } catch (error) {
-    if ((error as any).status === 404) {
+    if (
+      typeof error === "object" &&
+      error !== null &&
+      "status" in error &&
+      typeof (error as { status: unknown }).status === "number" &&
+      (error as { status: number }).status === 404
+    ) {
       notFound(); // Trigger the 404 page for user not found
     }
 

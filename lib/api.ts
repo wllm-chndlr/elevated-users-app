@@ -49,6 +49,10 @@ const fetchApi = async <T>(endpoint: string): Promise<T> => {
   try {
     return (await response.json()) as T;
   } catch (e) {
+    console.error(
+      `API Error: Failed to parse JSON response from ${endpoint}`,
+      e
+    );
     throw new Error(`Invalid JSON response from ${endpoint}`);
   }
 };
