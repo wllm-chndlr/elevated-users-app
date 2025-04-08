@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff; /* White background */
+  --foreground: #111827; /* Dark Gray text (like Tailwind's gray-900) */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Fade-in animation for carousel card */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
