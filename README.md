@@ -71,6 +71,10 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Running the Application
 
+You have two options to view the application:
+
+**Option 1: Run Locally (Recommended for Development)**
+
 1.  **Start the Development Server:**
     Once dependencies are installed and the environment variables are set up, run the following command in your terminal from the project root:
 
@@ -93,6 +97,14 @@ Before you begin, ensure you have the following installed on your system:
     - Clicking on a user in the list will take you to their profile page (e.g., `/users/1`).
 
 The application uses Fast Refresh, so changes you make to the code should automatically update in the browser without a full page reload.
+
+**Option 2: View Live Deployment**
+
+You can view a live version of the application deployed on Vercel:
+
+[https://elevated-users-app.vercel.app/](https://elevated-users-app.vercel.app/)
+
+_Note: The live deployment uses a fixed set of API credentials. Local development requires setting up your own credentials in `.env.local` as described above._
 
 ## Project Structure
 
